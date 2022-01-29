@@ -10,13 +10,14 @@ from imutils.video import VideoStream
 import pyautogui
 from flask_restful import Api, Resource, reqparse
 #from flask_cors import CORS #comment this on deployment
-from api.game import GameApiHandler
+# from api.game import GameApiHandler
 
 from flask import Flask, send_from_directory
 #from flask_cors import CORS #comment this on deployment
 
+# app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 app = Flask(__name__)
-api = Api(app)
+# api = Api(app)
 
 # app = Flask(__name__)
 
@@ -146,16 +147,32 @@ def gen_frames():
 # def serve(path):
 #     return send_from_directory(app.static_folder,'index.html')
 
-@app.route('/', defaults={'path':''})
-def index(path):
-    return render_template('index.html')
+# @app.route('/', defaults={'path':''})
+# def index(path):
+#     return render_template('frontend/build/index.html')
 
 # Video streaming route
-@app.route('/video_feed', defaults={'path':''})
+# @app.route('/video_feed', defaults={'path':''})
+# def video_feed():
+#     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, threaded=True, use_reloader=False)
+
+# if __name__ == '__main__':
+#      app.run(host='0.0.0.0', port=5000, threaded=True, use_reloader=False)
+
+# Home Page
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('home.html')
+
+# Video streaming route
+@app.route('/video_feed', methods=['GET'])
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-api.add_resource(GameApiHandler, '/flask/hello')
+# api.add_resource(GameApiHandler, '/flask/hello')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(threaded=True, host="0.0.0.0", port=5003)

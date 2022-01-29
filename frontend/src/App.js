@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 // import axios from 'axios'
 
 function App() {
-  // const [getMessage, setGetMessage] = useState({})
+  const [isIntructionToggle, setIntructionToggle] = useState(false);
 
   // useEffect(()=>{
   //   console.log('working...');
@@ -26,18 +26,33 @@ function App() {
   return (
     <div className="App">
       <iframe className="iframe_container" src="https://html5.gamedistribution.com/f2af2ecc05a445edb6862c589e996a7e/" scrolling="none" frameborder="0"></iframe>
-			<div className="center box_container">
-				<h3>Video Stream</h3>
-				{/* <img className="pad15" src="{{ url_for('video_feed') }}" width="100%" /> */}
-				<div className="left-align intruction_section">
-					<h5 className="center"><b>Instructions</b></h5>
-					<p>Move your face up, down, left and right to guide the player. The green dot represents the center of the face. When the green moves to one of the four boxes, an appropriate action is triggered.</p>
-					<h5 className="center"><b>Enjoy!</b></h5>
-					<h6><u><i>Tips and hints</i></u></h6>
-					<p>Face the screen at all times. The game uses webcam to track facial movements. For example when turning right, instead of looking right, move your head a couple of inches to the right</p>
-					<p>You can check your position in the video stream above.</p>
-				</div>
-			</div>
+      <div className='iframe_video'>
+        <iframe
+              className='video_box'
+              src={'http://techslides.com/demos/sample-videos/small.mp4'}
+              allow="accelerometer, autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen>
+        </iframe>
+      </div>
+      {!isIntructionToggle ? (
+        <div className="center box_container">
+          <div className='cross_icon' onClick={() => setIntructionToggle(!isIntructionToggle)}>
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div className="left-align intruction_section">
+            <h5 className="center"><b>Instructions</b></h5>
+            <p>Move your face up, down, left and right to guide the player. The green dot represents the center of the face. When the green moves to one of the four boxes, an appropriate action is triggered.</p>
+            <h5 className="center"><b>Enjoy!</b></h5>
+            <h6><u><i>Tips and hints</i></u></h6>
+            <p>Face the screen at all times. The game uses webcam to track facial movements. For example when turning right, instead of looking right, move your head a couple of inches to the right</p>
+            <p>You can check your position in the video stream above.</p>
+          </div>
+        </div>
+      ) : (
+        <div className="open_instruction" onClick={() => setIntructionToggle(!isIntructionToggle)}>
+          <i className="fa fa-sliders" aria-hidden="true"></i>
+			  </div>
+      )}
     </div>
   );
 }
