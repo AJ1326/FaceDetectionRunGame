@@ -1,0 +1,23 @@
+.box_container {
+  position: absolute;
+  height: 100%;
+  left: 62%;
+  background-color: white;
+  box-shadow: -5px 1px 4px 3px #00000063;
+}
+
+.iframe_container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.pad15 {
+  padding: 15px;
+}
+
+.intruction_section {
+  background-color: white;
+  padding: 30px;
+  line-height: 30px;
+}

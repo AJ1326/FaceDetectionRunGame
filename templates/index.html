@@ -3,19 +3,21 @@
 	<head>
 		<title>Priyank's Temple Run</title>
 		<!--Import materialize.css-->
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="./style.scss" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<div style="height: 100vh">
-			<iframe style="position: absolute; height: 100%; width: 80%" src="https://html5.gamedistribution.com/f2af2ecc05a445edb6862c589e996a7e/" scrolling="none" frameborder="0"></iframe>
-			<div style="position: absolute; height: 100%; left: 80%; background-color: rgb(216, 216, 216)" class="center">
+			<iframe class="iframe_container" src="https://html5.gamedistribution.com/f2af2ecc05a445edb6862c589e996a7e/" scrolling="none" frameborder="0"></iframe>
+			<div class="center box_container">
 				<h3>Video Stream</h3>
-				<img src="{{ url_for('video_feed') }}" width="100%">
-				<div class="left-align" style="background-color: white; padding-left: 10px;">
+				<img class="pad15" src="{{ url_for('video_feed') }}" width="100%">
+				<div class="left-align intruction_section">
 					<h5 class="center"><b>Instructions</b></h5>
 					<p>Move your face up, down, left and right to guide the player. The green dot represents the center of the face. When the green moves to one of the four boxes, an appropriate action is triggered.</p>
 					<h5 class="center" style="color: red;"><b>Enjoy!</b></h5>
@@ -26,5 +28,6 @@
 			</div>
 		</div>
 		<div>
+		<script src="./game.js"></script>
 	</body>
 </html>

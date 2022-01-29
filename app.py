@@ -8,8 +8,17 @@ import cv2
 import imutils
 from imutils.video import VideoStream
 import pyautogui
+from flask_restful import Api, Resource, reqparse
+#from flask_cors import CORS #comment this on deployment
+from api.game import GameApiHandler
+
+from flask import Flask, send_from_directory
+#from flask_cors import CORS #comment this on deployment
 
 app = Flask(__name__)
+api = Api(app)
+
+# app = Flask(__name__)
 
 # generate frames and yield to Response
 def gen_frames():
@@ -133,14 +142,20 @@ def gen_frames():
 			b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 # Home Page
-@app.route('/')
-def index():
+# @app.route("/", defaults={'path':''})
+# def serve(path):
+#     return send_from_directory(app.static_folder,'index.html')
+
+@app.route('/', defaults={'path':''})
+def index(path):
     return render_template('index.html')
 
 # Video streaming route
-@app.route('/video_feed')
+@app.route('/video_feed', defaults={'path':''})
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+api.add_resource(GameApiHandler, '/flask/hello')
 
 if __name__ == '__main__':
     app.run(debug=True)
