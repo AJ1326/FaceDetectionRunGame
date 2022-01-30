@@ -37,8 +37,8 @@ def gen_frames():
 	scale = 2
 
 	# Height and Width from the webcam
-	H = 480 // scale
-	W = 640 // scale
+	H = 600 // scale
+	W = 700 // scale
 
 	# Define the boundaries
 	up = 160 // scale

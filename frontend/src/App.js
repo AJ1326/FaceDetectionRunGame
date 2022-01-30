@@ -29,7 +29,7 @@ function App() {
       <div className='iframe_video'>
         <iframe
               className='video_box'
-              src={'http://techslides.com/demos/sample-videos/small.mp4'}
+              src={'http://192.168.29.54:5003/video_feed'}
               allow="accelerometer, autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen>
         </iframe>
