@@ -9,6 +9,7 @@ import imutils
 from imutils.video import VideoStream
 import pyautogui
 from flask_restful import Api, Resource, reqparse
+import game
 #from flask_cors import CORS #comment this on deployment
 # from api.game import GameApiHandler
 
@@ -37,8 +38,8 @@ def gen_frames():
 	scale = 2
 
 	# Height and Width from the webcam
-	H = 480 // scale
-	W = 640 // scale
+	H = 600 // scale
+	W = 700 // scale
 
 	# Define the boundaries
 	up = 160 // scale
@@ -172,7 +173,12 @@ def index():
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/')
+def dynamic_page():
+    return game
+
 # api.add_resource(GameApiHandler, '/flask/hello')
 
 if __name__ == '__main__':
-    app.run(threaded=True, host="0.0.0.0", port=5003)
+	app.run()
+    # app.run(threaded=True, host="0.0.0.0", port=5003)
