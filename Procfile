@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/jonniee -Dhttp.port=${PORT} -DapplyEvolutions.default=true
+web: gunicorn jonniee:app
