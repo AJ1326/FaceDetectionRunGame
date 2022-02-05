@@ -9,7 +9,7 @@ import imutils
 from imutils.video import VideoStream
 import pyautogui
 from flask_restful import Api, Resource, reqparse
-import game
+# import game
 #from flask_cors import CORS #comment this on deployment
 # from api.game import GameApiHandler
 
@@ -43,7 +43,7 @@ def gen_frames():
 
 	# Define the boundaries
 	up = 160 // scale
-	down = 320 // scale
+	down = 280 // scale
 	left = 200 // scale
 	right = 440 //scale
 
@@ -173,9 +173,9 @@ def index():
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/')
-def dynamic_page():
-    return game
+# @app.route('/')
+# def dynamic_page():
+#     return game
 
 # api.add_resource(GameApiHandler, '/flask/hello')
 
