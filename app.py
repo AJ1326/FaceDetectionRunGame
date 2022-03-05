@@ -222,7 +222,7 @@ def gen():
 	right = 440 //scale
 
 	# By default each key press is followed by a 0.1 second pause
-	pyautogui.PAUSE = 0.0
+	# pyautogui.PAUSE = 0.0
 
 	# wait sometime until next movement is registered
 	wait_time = 0.01
@@ -297,7 +297,7 @@ def gen():
 		# press the key
 		if action is not None and end - start > wait_time:
 			# print(action)
-			pyautogui.press(action)
+			# pyautogui.press(action)
 			start = time.time()
 
 		# draw the lines
