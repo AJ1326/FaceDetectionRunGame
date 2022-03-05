@@ -1,10 +1,15 @@
 # Heres a comment
 *.psd
 *.pdf
+/test
+/spec
+/features
+/doc
+/public
+frontend
+static
 test
 spec
 features
 doc
-/public
-frontend
-static
+public
