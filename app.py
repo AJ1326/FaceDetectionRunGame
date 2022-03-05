@@ -7,7 +7,7 @@ import time
 import cv2
 import imutils
 from imutils.video import VideoStream
-import pyautogui
+# import pyautogui
 from flask_restful import Api, Resource, reqparse
 
 # adding new data 
