@@ -4,8 +4,8 @@ attrs==21.2.0
 bidict==0.21.3
 click==8.0.3
 cycler==0.10.0
-dnspython==2.1.0
-eventlet==0.32.0
+dnspython==1.16.0
+eventlet==0.30.2
 face-recognition-models==0.3.0
 Flask==2.0.2
 Flask-Cors==3.0.10
