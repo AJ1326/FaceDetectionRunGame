@@ -1,1 +1,1 @@
-web: gunicorn -k eventlet -w 1 tracknrun:app --log-file=-
+web: gunicorn tracknrun:app
