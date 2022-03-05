@@ -30,8 +30,8 @@ protobuf==3.19.0
 PyAutoGUI==0.9.53
 PyGetWindow==0.0.9
 PyMsgBox==1.0.9
-pyobjc==8.2
-pyobjc-core==8.2
+# pyobjc==8.2
+# pyobjc-core==8.2
 # pyobjc-framework-Accessibility==8.2
 # pyobjc-framework-Accounts==8.2
 # pyobjc-framework-AddressBook==8.2
