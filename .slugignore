@@ -3,3 +3,7 @@
 *.pdf
 /test
 /spec
+/features
+/doc
+/public
+frontend
