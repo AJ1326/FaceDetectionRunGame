@@ -22,6 +22,9 @@ from flask_socketio import SocketIO
 # from api.game import GameApiHandler
 
 from flask import Flask, send_from_directory
+import os
+
+os.environ['DISPLAY'] = ':0'
 #from flask_cors import CORS #comment this on deployment
 
 # app = Flask(__name__, static_url_path='', static_folder='frontend/build')
